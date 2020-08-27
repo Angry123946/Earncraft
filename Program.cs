@@ -87,6 +87,38 @@ namespace Earncraft
             }
 
 
+            int playercolumn = 2;
+            int playerrow = 3;
+
+            while (true)
+            {
+                Console.SetCursorPosition(playercolumn, playerrow);
+                Console.Write("@");
+                ConsoleKeyInfo keyinfo = Console.ReadKey(true);
+
+                if (keyinfo.Key == ConsoleKey.LeftArrow)
+                {
+                    playercolumn--;
+                }
+
+                else if (keyinfo.Key == ConsoleKey.RightArrow)
+                {
+                    playercolumn++;
+                }
+                else if (keyinfo.Key == ConsoleKey.UpArrow)
+                {
+                    playerrow--;
+                }
+                else if (keyinfo.Key == ConsoleKey.DownArrow)
+                {
+                    playerrow++;
+                }
+            }
+            
+            Console.SetCursorPosition(0, level.Length);
+
+
+
 
 
 
