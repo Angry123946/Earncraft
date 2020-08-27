@@ -80,6 +80,12 @@ namespace Earncraft
                 Console.ReadKey(true);
 
             }
+            Console.Clear();
+            foreach (string row in level)
+            {
+                Console.WriteLine(row);
+            }
+
 
 
 
