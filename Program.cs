@@ -94,9 +94,9 @@ namespace Earncraft
             {
                 Console.SetCursorPosition(playercolumn, playerrow);
                 Console.Write("@");
-                
+
                 ConsoleKeyInfo keyinfo = Console.ReadKey(true);
-                
+
                 Console.SetCursorPosition(playercolumn, playerrow);
                 string currentRow = level[playerrow];
                 char currentcell = currentRow[playercolumn];
@@ -107,40 +107,39 @@ namespace Earncraft
 
                 if (keyinfo.Key == ConsoleKey.LeftArrow)
                 {
-                    playercolumn--;
-                    targetColumn = playercolumn-1;
-                    
+
+                    targetColumn = playercolumn - 1;
+
                 }
 
                 else if (keyinfo.Key == ConsoleKey.RightArrow)
                 {
-                    playercolumn++;
-                    targetColumn = playercolumn + 1;
 
+                    targetColumn = playercolumn + 1;
                 }
                 else if (keyinfo.Key == ConsoleKey.UpArrow)
                 {
-                    playerrow--;
                     targetRow = playerrow - 1;
                 }
                 else if (keyinfo.Key == ConsoleKey.DownArrow)
                 {
-                    playerrow++;
-                    targetRow = playerrow +1;
+                    targetRow = playerrow + 1;
                 }
-                
 
-                if(targetRow >= 0 && targetRow < level.Length)
-                {
-                    playerrow = targetRow;
-                }
-                playerrow = targetRow;
-
-                if (targetColumn >= 0 && targetColumn < level[playerrow].Length)
+                if (targetColumn >= 0 && targetColumn < level[playerrow].Length )
                 {
                     playercolumn = targetColumn;
                 }
-                playerrow = targetRow;
+                if (targetRow >= 0 && targetRow < level.Length)
+                {
+                    playerrow = targetRow;
+                }
+
+
+                
+               
+
+
 
             }
             
