@@ -94,7 +94,13 @@ namespace Earncraft
             {
                 Console.SetCursorPosition(playercolumn, playerrow);
                 Console.Write("@");
+                
                 ConsoleKeyInfo keyinfo = Console.ReadKey(true);
+                
+                Console.SetCursorPosition(playercolumn, playerrow);
+                string currentRow = level[playerrow];
+                char currentcell = currentRow[playercolumn];
+                Console.Write(currentcell);
 
                 if (keyinfo.Key == ConsoleKey.LeftArrow)
                 {
