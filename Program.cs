@@ -102,23 +102,46 @@ namespace Earncraft
                 char currentcell = currentRow[playercolumn];
                 Console.Write(currentcell);
 
+                int targetColumn = playercolumn;
+                int targetRow = playerrow;
+
                 if (keyinfo.Key == ConsoleKey.LeftArrow)
                 {
                     playercolumn--;
+                    targetColumn = playercolumn-1;
+                    
                 }
 
                 else if (keyinfo.Key == ConsoleKey.RightArrow)
                 {
                     playercolumn++;
+                    targetColumn = playercolumn + 1;
+
                 }
                 else if (keyinfo.Key == ConsoleKey.UpArrow)
                 {
                     playerrow--;
+                    targetRow = playerrow - 1;
                 }
                 else if (keyinfo.Key == ConsoleKey.DownArrow)
                 {
                     playerrow++;
+                    targetRow = playerrow +1;
                 }
+                
+
+                if(targetRow >= 0 && targetRow < level.Length)
+                {
+                    playerrow = targetRow;
+                }
+                playerrow = targetRow;
+
+                if (targetColumn >= 0 && targetColumn < level[playerrow].Length)
+                {
+                    playercolumn = targetColumn;
+                }
+                playerrow = targetRow;
+
             }
             
             Console.SetCursorPosition(0, level.Length);
