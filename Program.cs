@@ -125,6 +125,10 @@ namespace Earncraft
                 {
                     targetRow = playerrow + 1;
                 }
+                else
+                {
+                    break;
+                }
 
                 if (targetColumn >= 0 && targetColumn < level[playerrow].Length )
                 {
