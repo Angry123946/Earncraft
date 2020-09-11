@@ -130,11 +130,11 @@ namespace Earncraft
                     break;
                 }
 
-                if (targetColumn >= 0 && targetColumn < level[playerrow].Length )
+                if (targetColumn >= 0 && targetColumn < level[playerrow].Length && level[playerrow][targetColumn] != '#')
                 {
                     playercolumn = targetColumn;
                 }
-                if (targetRow >= 0 && targetRow < level.Length)
+                if (targetRow >= 0 && targetRow < level.Length && level[targetRow][playercolumn] != '#')
                 {
                     playerrow = targetRow;
                 }
