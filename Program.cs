@@ -2,6 +2,7 @@
 
 namespace Earncraft
 {
+
     class Program
     {
         public static void Main(string[] args)
@@ -92,15 +93,16 @@ namespace Earncraft
 
             while (true)
             {
-                Console.SetCursorPosition(playercolumn, playerrow);
-                Console.Write("@");
+                WriteAt(playercolumn, playerrow, "@");
 
                 ConsoleKeyInfo keyinfo = Console.ReadKey(true);
 
                 Console.SetCursorPosition(playercolumn, playerrow);
                 string currentRow = level[playerrow];
                 char currentcell = currentRow[playercolumn];
-                Console.Write(currentcell);
+
+
+                WriteAt(playercolumn, playerrow, currentcell);
 
                 int targetColumn = playercolumn;
                 int targetRow = playerrow;
@@ -140,13 +142,13 @@ namespace Earncraft
                 }
 
 
-                
-               
+
+
 
 
 
             }
-            
+
             Console.SetCursorPosition(0, level.Length);
 
 
@@ -155,5 +157,17 @@ namespace Earncraft
 
 
         }
+
+        static void WriteAt(int columnNumber, int rowNumber, string text)
+        {
+            Console.SetCursorPosition(columnNumber, rowNumber);
+            Console.Write(text);
+        }
+        static void WriteAt(int columnNumber, int rowNumber, char sign)
+        {
+            Console.SetCursorPosition(columnNumber, rowNumber);
+            Console.Write(sign);
+        }
+
     }
 }
